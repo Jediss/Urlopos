@@ -28,6 +28,7 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -59,7 +60,7 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 
     //Android Studio Preview support
-    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui:1.9.2")
     implementation("androidx.compose.ui:ui-tooling-preview")
 
     //UI Tests
@@ -77,5 +78,10 @@ dependencies {
 
     //Integration with LiveData
     implementation("androidx.compose.runtime:runtime-livedata")
+
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+
+    //The compose calendar library (kizitonwose) for Andorid
+    implementation("com.kizitonwose.calendar:compose:2.9.0")
 
 }
